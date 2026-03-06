@@ -93,7 +93,7 @@ BudgetNah
 ## Clone the repository
 
 ```bash
-git clone https://github.com/raouda237/BudgetNah.git
+git clone https://github.com/raouda237/budgetNah.git
 ```
 
 ##  Install dependencies
