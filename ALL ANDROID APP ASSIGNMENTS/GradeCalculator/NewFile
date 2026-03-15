@@ -1,0 +1,85 @@
+// Interface pour le calcul de note
+abstract class Gradable {
+  String calculateGrade();
+}
+
+
+// Classe abstraite Person
+abstract class Person {
+  String name;
+
+  Person(this.name);
+
+  String describe();
+}
+
+
+// Classe Student
+class Student extends Person implements Gradable {
+  double? score;
+
+  Student(String name, this.score) : super(name);
+
+  @override
+  String calculateGrade() {
+    var s = score;
+
+    if (s == null) {
+      return "No Score";
+    }
+
+    if (s >= 90) return "A";
+    if (s >= 80) return "B";
+    if (s >= 70) return "C";
+    if (s >= 60) return "D";
+
+    return "F";
+  }
+
+  @override
+  String describe() {
+    if (score == null) {
+      return "No score for $name";
+    } else {
+      return "$name scored $score : Grade ${calculateGrade()}";
+    }
+  }
+}
+
+
+// Classe Teacher
+class Teacher extends Person {
+  String subject;
+
+  Teacher(String name, this.subject) : super(name);
+
+  @override
+  String describe() {
+    return "Teacher $name teaches $subject";
+  }
+
+  @override
+  String toString() {
+    return "Teacher(name: $name, subject: $subject)";
+  }
+}
+
+
+// Programme principal
+void main() {
+
+  // Polymorphisme : différentes classes dans une même liste
+  List<Person> people = [
+    Student("Amira", 92.0),
+    Student("Bovan", 74.0),
+    Student("Clavia", null),
+    Teacher("Mr. Mbarga", "Mathematics")
+  ];
+
+  print("=== School Members ===");
+
+  // appel polymorphique
+  for (var person in people) {
+    print(person.describe());
+  }
+}
