@@ -1,3 +1,5 @@
+//EXERCISE 2: Transforming between collection types
+
 void main() {
   List<String> words = ["Apple", "Cat", "Banana", "Dog", "Elephant", "Car"];
 

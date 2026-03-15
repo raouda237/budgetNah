@@ -1,3 +1,5 @@
+//EXERCISE 1: Build your own higher-order function
+
 // Fonction qui traite une liste avec une fonction predicate
 List<int> processList(List<int> numbers, bool Function(int) predicate) {
   List<int> result = [];
